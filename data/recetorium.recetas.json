@@ -1,0 +1,664 @@
+[{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c7a"
+  },
+  "nombre": "Ensalada César",
+  "foto": "ensalada.jpg",
+  "instrucciones": "Mezclar lechuga, pollo a la plancha, pan tostado y aderezar con mayonesa y pimienta.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c92"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 150,
+      "unidad_medida": "gramo",
+      "nombre": "Pechuga de pollo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca4"
+      }
+    },
+    {
+      "cantidad": 1,
+      "unidad_medida": "gramo",
+      "nombre": "Pimienta negra",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca5"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Cebolla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca6"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "gramo",
+      "nombre": "Lechuga",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca7"
+      }
+    },
+    {
+      "cantidad": 30,
+      "unidad_medida": "gramo",
+      "nombre": "Mayonesa",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca9"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.828Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c7c"
+  },
+  "nombre": "Tortilla de huevos",
+  "foto": "tortilla.jpg",
+  "instrucciones": "Batir huevos con sal, añadir cebolla picada. Cocinar en sartén con mantequilla.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c92"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 3,
+      "unidad_medida": "unidad",
+      "nombre": "Huevos",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c98"
+      }
+    },
+    {
+      "cantidad": 20,
+      "unidad_medida": "gramo",
+      "nombre": "Mantequilla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9a"
+      }
+    },
+    {
+      "cantidad": 1,
+      "unidad_medida": "gramo",
+      "nombre": "Sal",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9b"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Cebolla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca6"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c7e"
+  },
+  "nombre": "Sándwich club",
+  "foto": "sandwich.jpg",
+  "instrucciones": "Tostar pan, agregar jamón, queso, lechuga, tomate y mayonesa. Servir frío.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c92"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Tomate",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9e"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Queso mozzarella",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9f"
+      }
+    },
+    {
+      "cantidad": 30,
+      "unidad_medida": "gramo",
+      "nombre": "Lechuga",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca7"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "rebanada",
+      "nombre": "Pan de molde",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca8"
+      }
+    },
+    {
+      "cantidad": 10,
+      "unidad_medida": "gramo",
+      "nombre": "Mayonesa",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca9"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Jamón cocido",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662cac"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c80"
+  },
+  "nombre": "Tortitas dulces",
+  "foto": "tortitas.jpg",
+  "instrucciones": "Mezclar harina, azúcar, huevos y leche. Cocinar en sartén con mantequilla hasta dorar.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c93"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 200,
+      "unidad_medida": "gramo",
+      "nombre": "Harina de trigo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c96"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Azúcar",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c97"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "unidad",
+      "nombre": "Huevos",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c98"
+      }
+    },
+    {
+      "cantidad": 150,
+      "unidad_medida": "mililitro",
+      "nombre": "Leche",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c99"
+      }
+    },
+    {
+      "cantidad": 20,
+      "unidad_medida": "gramo",
+      "nombre": "Mantequilla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9a"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c82"
+  },
+  "nombre": "Pizza Margarita",
+  "foto": "pizza.jpg",
+  "instrucciones": "Extender masa, untar salsa de tomate, agregar queso y albahaca. Hornear 15 minutos a 220°C.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c93"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 250,
+      "unidad_medida": "gramo",
+      "nombre": "Harina de trigo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c96"
+      }
+    },
+    {
+      "cantidad": 3,
+      "unidad_medida": "gramo",
+      "nombre": "Sal",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9b"
+      }
+    },
+    {
+      "cantidad": 150,
+      "unidad_medida": "gramo",
+      "nombre": "Tomate",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9e"
+      }
+    },
+    {
+      "cantidad": 5,
+      "unidad_medida": "hoja",
+      "nombre": "Albahaca fresca",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca0"
+      }
+    },
+    {
+      "cantidad": 10,
+      "unidad_medida": "mililitro",
+      "nombre": "Aceite de oliva",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca1"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c84"
+  },
+  "nombre": "Crepes de chocolate",
+  "foto": "crepes.jpg",
+  "instrucciones": "Mezclar harina, huevos y leche. Cocinar en sartén fino, rellenar con chocolate derretido.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c93"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 120,
+      "unidad_medida": "gramo",
+      "nombre": "Harina de trigo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c96"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "unidad",
+      "nombre": "Huevos",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c98"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "mililitro",
+      "nombre": "Leche",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c99"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Chocolate negro",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9d"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c86"
+  },
+  "nombre": "Brownies de chocolate",
+  "foto": "brownies.jpg",
+  "instrucciones": "Derretir chocolate y mantequilla, mezclar con azúcar y huevos. Hornear 25 minutos.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c94"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 120,
+      "unidad_medida": "gramo",
+      "nombre": "Azúcar",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c97"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "unidad",
+      "nombre": "Huevos",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c98"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "gramo",
+      "nombre": "Mantequilla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9a"
+      }
+    },
+    {
+      "cantidad": 150,
+      "unidad_medida": "gramo",
+      "nombre": "Chocolate negro",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9d"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c88"
+  },
+  "nombre": "Pollo al horno con hierbas",
+  "foto": "pollo_horno.jpg",
+  "instrucciones": "Condimentar pollo con sal y pimienta. Hornear a 180°C por 40 minutos.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c94"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 5,
+      "unidad_medida": "gramo",
+      "nombre": "Sal",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9b"
+      }
+    },
+    {
+      "cantidad": 500,
+      "unidad_medida": "gramo",
+      "nombre": "Pechuga de pollo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca4"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "gramo",
+      "nombre": "Pimienta negra",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca5"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c8a"
+  },
+  "nombre": "Quiche de espinaca y jamón",
+  "foto": "quiche.jpg",
+  "instrucciones": "Batir huevos con crema, añadir espinaca, jamón y queso. Hornear 30 minutos.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c94"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 3,
+      "unidad_medida": "unidad",
+      "nombre": "Huevos",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c98"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Queso mozzarella",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9f"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "mililitro",
+      "nombre": "Champiñones",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662caa"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "gramo",
+      "nombre": "Jamón cocido",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662cac"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Espinaca",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662cad"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c8c"
+  },
+  "nombre": "Spaghetti al Ajo y Aceite",
+  "foto": "spaghetti.jpg",
+  "instrucciones": "Cocer spaghetti. Saltear ajo en aceite de oliva, mezclar con pasta y pimienta.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c95"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 20,
+      "unidad_medida": "mililitro",
+      "nombre": "Aceite de oliva",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca1"
+      }
+    },
+    {
+      "cantidad": 2,
+      "unidad_medida": "diente",
+      "nombre": "Ajo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca2"
+      }
+    },
+    {
+      "cantidad": 200,
+      "unidad_medida": "gramo",
+      "nombre": "Pasta spaghetti",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca3"
+      }
+    },
+    {
+      "cantidad": 1,
+      "unidad_medida": "gramo",
+      "nombre": "Pimienta negra",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca5"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c8e"
+  },
+  "nombre": "Pan casero básico",
+  "foto": "pan.jpg",
+  "instrucciones": "Mezclar harina, agua, levadura y sal. Amasar y hornear 30 minutos.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c95"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 300,
+      "unidad_medida": "gramo",
+      "nombre": "Harina de trigo",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c96"
+      }
+    },
+    {
+      "cantidad": 5,
+      "unidad_medida": "gramo",
+      "nombre": "Sal",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662c9b"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c90"
+  },
+  "nombre": "Salteado de champiñones",
+  "foto": "salteado.jpg",
+  "instrucciones": "Saltear champiñones, pimientos y cebolla en aceite de oliva. Condimentar con sal y pimienta.",
+  "autor_id": {
+    "$oid": "68cf9ccf44249d829e662c95"
+  },
+  "ingredientes": [
+    {
+      "cantidad": 15,
+      "unidad_medida": "mililitro",
+      "nombre": "Aceite de oliva",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca1"
+      }
+    },
+    {
+      "cantidad": 1,
+      "unidad_medida": "gramo",
+      "nombre": "Pimienta negra",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca5"
+      }
+    },
+    {
+      "cantidad": 50,
+      "unidad_medida": "gramo",
+      "nombre": "Cebolla",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca6"
+      }
+    },
+    {
+      "cantidad": 150,
+      "unidad_medida": "gramo",
+      "nombre": "Mayonesa",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662ca9"
+      }
+    },
+    {
+      "cantidad": 200,
+      "unidad_medida": "gramo",
+      "nombre": "Champiñones",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662caa"
+      }
+    },
+    {
+      "cantidad": 100,
+      "unidad_medida": "gramo",
+      "nombre": "Espinaca",
+      "ingrediente_id": {
+        "$oid": "68cf9ccf44249d829e662cad"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.829Z"
+  }
+}]

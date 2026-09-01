@@ -1,0 +1,18 @@
+{
+  "name": "recetorium",
+  "version": "1.0.0",
+  "description": "API REST de recetas de cocina - Proyecto educativo",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["api", "recetas", "express", "nodejs"],
+  "author": "",
+  "license": "ISC"
+}

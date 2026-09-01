@@ -1,0 +1,375 @@
+[{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c96"
+  },
+  "nombre": "Harina de trigo",
+  "foto": "harina.jpg",
+  "color": "#FFFFFF",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.788Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.788Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c97"
+  },
+  "nombre": "Azúcar",
+  "foto": "azucar.jpg",
+  "color": "#FFF5EE",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.789Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c98"
+  },
+  "nombre": "Huevos",
+  "foto": "huevos.jpg",
+  "color": "#FFEEAA",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.789Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c99"
+  },
+  "nombre": "Leche",
+  "foto": "leche.jpg",
+  "color": "#FFFFF0",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9a"
+  },
+  "nombre": "Mantequilla",
+  "foto": "mantequilla.jpg",
+  "color": "#FFD700",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9b"
+  },
+  "nombre": "Sal",
+  "foto": "sal.jpg",
+  "color": "#FFFFFF",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9c"
+  },
+  "nombre": "Polvo de hornear",
+  "foto": "polvo_hornear.jpg",
+  "color": "#FFFFFF",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9d"
+  },
+  "nombre": "Chocolate negro",
+  "foto": "chocolate.jpg",
+  "color": "#3E2F2F",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9e"
+  },
+  "nombre": "Tomate",
+  "foto": "tomate.jpg",
+  "color": "#FF6347",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c9f"
+  },
+  "nombre": "Queso mozzarella",
+  "foto": "queso.jpg",
+  "color": "#FFFFF0",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca0"
+  },
+  "nombre": "Albahaca fresca",
+  "foto": "albahaca.jpg",
+  "color": "#228B22",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca1"
+  },
+  "nombre": "Aceite de oliva",
+  "foto": "aceite.jpg",
+  "color": "#808000",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca2"
+  },
+  "nombre": "Ajo",
+  "foto": "ajo.jpg",
+  "color": "#F5F5DC",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca3"
+  },
+  "nombre": "Pasta spaghetti",
+  "foto": "spaghetti.jpg",
+  "color": "#F5DEB3",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca4"
+  },
+  "nombre": "Pechuga de pollo",
+  "foto": "pollo.jpg",
+  "color": "#FFE4C4",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca5"
+  },
+  "nombre": "Pimienta negra",
+  "foto": "pimienta.jpg",
+  "color": "#000000",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca6"
+  },
+  "nombre": "Cebolla",
+  "foto": "cebolla.jpg",
+  "color": "#FFE4B5",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca7"
+  },
+  "nombre": "Lechuga",
+  "foto": "lechuga.jpg",
+  "color": "#7CFC00",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca8"
+  },
+  "nombre": "Pan de molde",
+  "foto": "pan.jpg",
+  "color": "#F5DEB3",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662ca9"
+  },
+  "nombre": "Mayonesa",
+  "foto": "mayonesa.jpg",
+  "color": "#FFFFE0",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662caa"
+  },
+  "nombre": "Champiñones",
+  "foto": "champiñones.jpg",
+  "color": "#D2B48C",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662cab"
+  },
+  "nombre": "Crema de leche",
+  "foto": "crema.jpg",
+  "color": "#FFFDD0",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662cac"
+  },
+  "nombre": "Jamón cocido",
+  "foto": "jamon.jpg",
+  "color": "#FFDAB9",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662cad"
+  },
+  "nombre": "Espinaca",
+  "foto": "espinaca.jpg",
+  "color": "#006400",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662cae"
+  },
+  "nombre": "Pimiento rojo",
+  "foto": "pimiento.jpg",
+  "color": "#FF4500",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.791Z"
+  }
+}]

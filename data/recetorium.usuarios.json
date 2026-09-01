@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c92"
+  },
+  "mail": "alan.turing@example.com",
+  "clave": "clave123",
+  "tipo": "ADMIN",
+  "perfil": {
+    "nombre": "Alan Turing",
+    "foto": "alan.jpg"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.809Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.809Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c93"
+  },
+  "mail": "ada.lovelace@example.com",
+  "clave": "clave123",
+  "tipo": "STD",
+  "perfil": {
+    "nombre": "Ada Lovelace",
+    "foto": "ada.jpg"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c94"
+  },
+  "mail": "grace.hopper@example.com",
+  "clave": "clave123",
+  "tipo": "STD",
+  "perfil": {
+    "nombre": "Grace Hopper",
+    "foto": "grace.jpg"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cf9ccf44249d829e662c95"
+  },
+  "mail": "katherine.johnson@example.com",
+  "clave": "clave123",
+  "tipo": "STD",
+  "perfil": {
+    "nombre": "Katherine Johnson",
+    "foto": "katherine.jpg"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T02:19:06.810Z"
+  }
+}]
