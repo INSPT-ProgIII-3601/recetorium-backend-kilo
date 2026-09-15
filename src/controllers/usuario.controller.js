@@ -12,8 +12,9 @@
 // llamadas directas a la base de datos.
 // ============================================================
 
-import { db } from '../config/db.js';
-import { Usuario } from '../models/Usuario.js';
+import { db } from "../config/db.js";
+import { Usuario } from "../models/Usuario.js";
+import jwt from "jsonwebtoken";
 
 // ============================================================
 //  obtenerUsuarios — GET /api/usuarios
@@ -33,7 +34,7 @@ export const obtenerUsuarioPorId = (req, res) => {
   const usuario = db.getUsuarioById(req.params.id);
 
   if (!usuario) {
-    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    return res.status(404).json({ mensaje: "Usuario no encontrado" });
   }
 
   res.json(usuario.toJSON());
@@ -65,7 +66,7 @@ export const actualizarUsuario = (req, res) => {
   const existente = db.getUsuarioById(req.params.id);
 
   if (!existente) {
-    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    return res.status(404).json({ mensaje: "Usuario no encontrado" });
   }
 
   try {
@@ -92,8 +93,25 @@ export const eliminarUsuario = (req, res) => {
   const eliminado = db.deleteUsuario(req.params.id);
 
   if (!eliminado) {
-    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    return res.status(404).json({ mensaje: "Usuario no encontrado" });
   }
 
   res.status(204).send();
+};
+
+export const loginUsuario = async (req, res) => {
+  const { mail, clave } = req.body;
+  // 1. Buscar usuario en el Model...
+  // 2. Comparar contraseña con bcrypt.compare(password, usuario.password)
+
+  // 3. Si es válido, generar el JWT
+  const token = jwt.sign(
+    //{ id: usuario._id, role: usuario.role },
+    {id: 1, role: 'ADMIN'},
+    // process.env.JWT_SECRET,
+    "claveblablabla",
+    { expiresIn: "15000" },
+  );
+
+  res.json({ message: "Login exitoso", token });
 };

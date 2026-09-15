@@ -29,6 +29,7 @@ import cors from 'cors';
 import usuariosRoutes from './routes/usuarios.routes.js';
 import recetasRoutes from './routes/recetas.routes.js';
 import ingredientesRoutes from './routes/ingredientes.routes.js';
+import {loginUsuario} from './controllers/usuario.controller.js'
 
 // Importamos la constante PORT desde nuestro archivo de config.
 // Si existe la variable de entorno PORT la usa, si no, 3000.
@@ -65,6 +66,8 @@ app.get('/', (req, res) => {
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/recetas', recetasRoutes);
 app.use('/api/ingredientes', ingredientesRoutes);
+// login
+app.post('/api/login', loginUsuario);
 
 // --- Encender el servidor ---
 // app.listen(PORT, callback) pone al servidor a "escuchar"
