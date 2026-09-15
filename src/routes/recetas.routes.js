@@ -12,11 +12,12 @@ import {
   listarRecetasPorAutor,
   crearReceta,
 } from '../controllers/receta.controller.js';
+import {logInfoCli} from '../middlewares/middlewares.js'
 
 const router = express.Router();
 
 // GET /api/recetas -> listar todas
-router.get('/', listarRecetas);
+router.get('/', logInfoCli, listarRecetas);
 
 // GET /api/recetas/autor/:autorId -> listar por autor
 // Debe ir antes de /:id para que Express no confunda "autor"
@@ -27,6 +28,6 @@ router.get('/autor/:autorId', listarRecetasPorAutor);
 router.get('/:id', obtenerRecetaPorId);
 
 // POST /api/recetas -> crear una
-router.post('/', crearReceta);
+router.post('/', [logInfoCli], crearReceta);
 
 export default router;
