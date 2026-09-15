@@ -1,102 +1,99 @@
 // ============================================================
-//  usuario.controller.js — Capa de negocio de Usuarios
+//  usuario.controller.js — Controladores HTTP de Usuarios
 // ============================================================
-// Un "controller" es el punto medio entre la RUTA (que recibe
-// el request HTTP) y la BASE DE DATOS (que guarda los datos).
+// Cada función de esta capa recibe directamente (req, res) y
+// se registra como handler de Express. Acá vive la lógica que
+// antes estaba repartida entre "funciones intermedias" y las
+// rutas: lectura de req.params/req.body, validaciones, acceso a
+// la base de datos y construcción de la respuesta HTTP.
 //
-// Responsabilidad típica de un controller:
-//   1) Tomar lo que vino en el request (params, body, etc.).
-//   2) Llamar al modelo y/o a la DB para hacer el trabajo.
-//   3) Devolver una respuesta (o null/error) al router.
-//
-// ⚠️ Observación: en este proyecto los controllers están
-// definidos como FUNCIONES PURAS, no como métodos que reciben
-// req/res. El router (usuarios.routes.js) es el que llama a
-// estas funciones y arma la respuesta HTTP. Esto es válido y
-// didáctico, pero a nivel profesional muchas veces se prefiere
-// que el controller SI reciba req/res para tener todo más junto.
+// Las rutas de usuarios.routes.js solo deben invocar estas
+// funciones; no deberían contener if/else de negocio ni
+// llamadas directas a la base de datos.
 // ============================================================
 
-// Importamos el "db" (nuestra mini-base-de-datos) y el modelo.
 import { db } from '../config/db.js';
 import { Usuario } from '../models/Usuario.js';
 
 // ============================================================
-//  obtenerUsuarios — equivalente a GET /api/usuarios
+//  obtenerUsuarios — GET /api/usuarios
 // ============================================================
-// Devuelve un array con todos los usuarios en formato "limpio"
-// (gracias a toJSON()). Si la DB está vacía, devuelve [].
-export const obtenerUsuarios = () => {
-  return db.getUsuarios().map((u) => u.toJSON());
+// Devuelve todos los usuarios en formato seguro para el cliente.
+// La clave queda oculta porque toJSON() no la incluye.
+export const obtenerUsuarios = (req, res) => {
+  res.json(db.getUsuarios().map((usuario) => usuario.toJSON()));
 };
 
 // ============================================================
-//  obtenerUsuarioPorId — equivalente a GET /api/usuarios/:id
+//  obtenerUsuarioPorId — GET /api/usuarios/:id
 // ============================================================
-// Devuelve UN usuario por id, o null si no existe. Dejar que
-// devuelva null (en vez de tirar un error) es cómodo: el router
-// lo traduce a 404.
-export const obtenerUsuarioPorId = (id) => {
-  const usuario = db.getUsuarioById(id);
-  if (!usuario) return null;
-  return usuario.toJSON();
+// El id llega como string en req.params.id. Si no existe, la
+// capa controladora responde 404; si existe, responde 200.
+export const obtenerUsuarioPorId = (req, res) => {
+  const usuario = db.getUsuarioById(req.params.id);
+
+  if (!usuario) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
+
+  res.json(usuario.toJSON());
 };
 
 // ============================================================
-//  crearUsuario — equivalente a POST /api/usuarios
+//  crearUsuario — POST /api/usuarios
 // ============================================================
-// Crea un Usuario nuevo a partir de lo que vino en el body.
-// Fijate el orden:
-//   1) new Usuario(datos) puede LANZAR un Error si los datos
-//      no pasan las validaciones. Eso lo atrapamos en la ruta
-//      con un try/catch y respondemos 400.
-//   2) Si todo OK, le asignamos un id (en este caso usamos
-//      Date.now() para que sea único "suficiente" en memoria)
-//      y lo guardamos en la DB.
-export const crearUsuario = (datos) => {
-  const usuario = new Usuario(datos);
-  // El id lo genera db.createUsuario (es un ObjectId-like string).
-  // Antes generábamos Date.now() acá, pero ahora lo centralizamos
-  // en la "DB" para que la lógica de IDs viva en un solo lugar.
-  const creado = db.createUsuario(usuario);
-  return creado.toJSON();
+// El modelo Usuario puede lanzar Error cuando los datos no
+// pasan las validaciones. El controller traduce ese error a
+// una respuesta HTTP 400 para el cliente.
+export const crearUsuario = (req, res) => {
+  try {
+    const usuario = new Usuario(req.body);
+    const creado = db.createUsuario(usuario);
+    res.status(201).json(creado.toJSON());
+  } catch (error) {
+    res.status(400).json({ mensaje: error.message });
+  }
 };
 
 // ============================================================
-//  actualizarUsuario — equivalente a PUT /api/usuarios/:id
+//  actualizarUsuario — PUT /api/usuarios/:id
 // ============================================================
-// Primero chequeamos que el usuario exista. Si no, null.
-// Después armamos un objeto "datosActualizados" aplicando el
-// truco del "??": si en el body vino un campo, lo usamos;
-// si no, conservamos el valor anterior. Así un PUT parcial
-// no borra los campos que el cliente no mandó.
-//
-// Luego creamos un Usuario NUEVO con esos datos (para que
-// se revaliden) y lo guardamos pisando el viejo.
-export const actualizarUsuario = (id, datos) => {
-  const existente = db.getUsuarioById(id);
-  if (!existente) return null;
+// Conserva los campos anteriores cuando el cliente no envía
+// alguno de ellos (operador ??). Vuelve a validar el usuario
+// completo antes de reemplazarlo.
+export const actualizarUsuario = (req, res) => {
+  const existente = db.getUsuarioById(req.params.id);
 
-  const datosActualizados = {
-    mail: datos.mail ?? existente.mail,
-    clave: datos.clave ?? existente.clave,
-    tipo: datos.tipo ?? existente.tipo,
-    perfil: datos.perfil ?? existente.perfil,
-  };
+  if (!existente) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
 
-  const usuario = new Usuario(datosActualizados);
-  usuario.setId(id);
-  const actualizado = db.updateUsuario(id, usuario);
-  return actualizado.toJSON();
+  try {
+    const datosActualizados = {
+      mail: req.body.mail ?? existente.mail,
+      clave: req.body.clave ?? existente.clave,
+      tipo: req.body.tipo ?? existente.tipo,
+      perfil: req.body.perfil ?? existente.perfil,
+    };
+    const usuario = new Usuario(datosActualizados);
+    usuario.setId(req.params.id);
+    const actualizado = db.updateUsuario(req.params.id, usuario);
+    res.json(actualizado.toJSON());
+  } catch (error) {
+    res.status(400).json({ mensaje: error.message });
+  }
 };
 
 // ============================================================
-//  eliminarUsuario — equivalente a DELETE /api/usuarios/:id
+//  eliminarUsuario — DELETE /api/usuarios/:id
 // ============================================================
-// Devuelve true si borró, false si el id no existía.
-// El router usa ese boolean para responder 204 (sin contenido)
-// o 404 (no encontrado).
-export const eliminarUsuario = (id) => {
-  const eliminado = db.deleteUsuario(id);
-  return eliminado;
+// Responde 204 cuando elimina y 404 cuando el id no existe.
+export const eliminarUsuario = (req, res) => {
+  const eliminado = db.deleteUsuario(req.params.id);
+
+  if (!eliminado) {
+    return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+  }
+
+  res.status(204).send();
 };

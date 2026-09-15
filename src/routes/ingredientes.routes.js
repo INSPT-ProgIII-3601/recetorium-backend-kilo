@@ -1,28 +1,22 @@
 // ============================================================
 //  ingredientes.routes.js — Router de Ingredientes
 // ============================================================
-// Endpoints de lectura para los ingredientes del seed.
-// La idea es que sirvan como catálogo para autocompletar al
-// armar una receta.
+// Las rutas solo montan los handlers de la capa controladora.
+// No contienen lógica de negocio ni llamadas a la base de datos.
 // ============================================================
 
 import express from 'express';
-import { db } from '../config/db.js';
+import {
+  listarIngredientes,
+  obtenerIngredientePorId,
+} from '../controllers/ingrediente.controller.js';
 
 const router = express.Router();
 
-// GET /api/ingredientes  -> listar todos
-router.get('/', (_req, res) => {
-  res.json(db.getIngredientes());
-});
+// GET /api/ingredientes -> listar todos
+router.get('/', listarIngredientes);
 
-// GET /api/ingredientes/:id  -> obtener uno
-router.get('/:id', (req, res) => {
-  const ing = db.getIngredienteById(req.params.id);
-  if (!ing) {
-    return res.status(404).json({ mensaje: 'Ingrediente no encontrado' });
-  }
-  res.json(ing);
-});
+// GET /api/ingredientes/:id -> obtener uno
+router.get('/:id', obtenerIngredientePorId);
 
 export default router;
