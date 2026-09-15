@@ -9,11 +9,18 @@
     "dev": "node --watch src/app.js"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
     "express": "^4.18.2",
-    "dotenv": "^16.3.1",
-    "cors": "^2.8.5"
+    "jsonwebtoken": "^9.0.3"
   },
-  "keywords": ["api", "recetas", "express", "nodejs"],
+  "keywords": [
+    "api",
+    "recetas",
+    "express",
+    "nodejs"
+  ],
   "author": "",
   "license": "ISC"
 }
