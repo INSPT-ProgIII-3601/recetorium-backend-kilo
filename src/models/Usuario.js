@@ -11,6 +11,7 @@
 // directamente mail/clave/tipo; hay que pasar por los getters
 // y por el setId controlado.
 // ============================================================
+import bcrypt from 'bcrypt';
 
 export class Usuario {
   // --- Campos privados (con #) ---
@@ -60,9 +61,22 @@ export class Usuario {
   // números, símbolos, etc., y la guardaríamos hasheada con
   // bcrypt, nunca en texto plano.)
   validarClave(clave) {
-    if (!clave || clave.length < 4) {
-      throw new Error('La clave debe tener al menos 4 caracteres');
+    if (!clave || clave.length < 8) {
+      throw new Error('La clave debe tener al menos 8 caracteres');
     }
+    // Al menos una letra mayúscula
+    if (!/[A-Z]/.test(clave)) {
+      throw new Error('La clave debe contener al menos una letra mayúscula');
+    }
+    // Al menos un número
+    if (!/[0-9]/.test(clave)) {
+      throw new Error('La clave debe contener al menos un número');
+    }
+    // Al menos un símbolo / carácter especial
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(clave)) {
+      throw new Error('La clave debe contener al menos un símbolo especial');
+    }
+
     return clave;
   }
 

@@ -121,6 +121,12 @@ export const db = {
     usuarios.push(data);
     return data;
   },
+  getUsuarioByMail: (mail) => usuarios.find((u) => u.mail === mail),
+  createUsuario: (data) => {
+    data.setId(newId());
+    usuarios.push(data);
+    return data;
+  },
   updateUsuario: (id, data) => {
     const index = usuarios.findIndex((u) => u.id === id);
     if (index === -1) return null;

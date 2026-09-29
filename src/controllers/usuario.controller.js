@@ -15,6 +15,7 @@
 import { db } from "../config/db.js";
 import { Usuario } from "../models/Usuario.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt"
 
 // ============================================================
 //  obtenerUsuarios — GET /api/usuarios
@@ -46,9 +47,20 @@ export const obtenerUsuarioPorId = (req, res) => {
 // El modelo Usuario puede lanzar Error cuando los datos no
 // pasan las validaciones. El controller traduce ese error a
 // una respuesta HTTP 400 para el cliente.
-export const crearUsuario = (req, res) => {
+export const crearUsuario = async (req, res) => {
   try {
-    const usuario = new Usuario(req.body);
+    const {mail, clave} = req.body;
+
+    const user = db.getUsuarioByMail(mail);
+    if (user) {
+      return res.status(400).json({ mensaje: "ya existe un usuario con este mail: " + mail });
+    }
+
+    // Hashear la clave con un salt round de 10 y retornarla
+    const saltRounds = 10;
+    const claveHasheada = await bcrypt.hash(clave, saltRounds);
+
+    const usuario = new Usuario({mail, clave: claveHasheada});
     const creado = db.createUsuario(usuario);
     res.status(201).json(creado.toJSON());
   } catch (error) {
@@ -100,18 +112,46 @@ export const eliminarUsuario = (req, res) => {
 };
 
 export const loginUsuario = async (req, res) => {
-  const { mail, clave } = req.body;
-  // 1. Buscar usuario en el Model...
-  // 2. Comparar contraseña con bcrypt.compare(password, usuario.password)
+  try {
+    const { mail, clave } = req.body;
 
-  // 3. Si es válido, generar el JWT
-  const token = jwt.sign(
-    //{ id: usuario._id, role: usuario.role },
-    {id: 1, role: 'ADMIN'},
-    // process.env.JWT_SECRET,
-    "claveblablabla",
-    { expiresIn: "1h" },
-  );
+    // Validación básica de campos requeridos
+    if (!mail || !clave) {
+      return res.status(400).json({ mensaje: "El mail y la clave son obligatorios" });
+    }
 
-  res.json({ message: "Login exitoso", token });
+    // 1. Buscar usuario por mail en el modelo
+    const usuario = db.getUsuarioByMail(mail);
+    
+    // Si no existe el usuario, responder 401
+    if (!usuario) {
+      return res.status(401).json({ mensaje: "Credenciales inválidas" });
+    }
+
+    // 2. Comparar la clave ingresada con el hash guardado en la base de datos
+    const esClaveValida = await bcrypt.compare(clave, usuario.clave);
+
+    if (!esClaveValida) {
+      return res.status(401).json({ mensaje: "Credenciales inválidas" });
+    }
+
+    // 3. Generar el JWT con el payload del usuario
+    const SECRET_KEY = process.env.JWT_SECRET || 'claveblablabla';
+
+    const token = jwt.sign(
+      { id: usuario._id || usuario.id, role: usuario.role },
+      SECRET_KEY,
+      { expiresIn: "1h" }
+    );
+
+    // 4. Responder con éxito
+    return res.json({ 
+      mensaje: "Login exitoso", 
+      token 
+    });
+
+  } catch (error) {
+    console.error('Error en loginUsuario:', error);
+    return res.status(500).json({ mensaje: "Error interno del servidor" });
+  }
 };
