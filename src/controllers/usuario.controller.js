@@ -110,7 +110,7 @@ export const loginUsuario = async (req, res) => {
     {id: 1, role: 'ADMIN'},
     // process.env.JWT_SECRET,
     "claveblablabla",
-    { expiresIn: "15000" },
+    { expiresIn: "1h" },
   );
 
   res.json({ message: "Login exitoso", token });

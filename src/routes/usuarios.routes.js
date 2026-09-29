@@ -13,6 +13,7 @@ import {
   actualizarUsuario,
   eliminarUsuario,
 } from '../controllers/usuario.controller.js';
+import { logInfoCli, authToken, esAdmin } from '../middlewares/middlewares.js';
 
 const router = express.Router();
 
@@ -20,15 +21,15 @@ const router = express.Router();
 router.get('/', obtenerUsuarios);
 
 // GET /api/usuarios/:id -> obtener uno
-router.get('/:id', obtenerUsuarioPorId);
+router.get('/:id', logInfoCli, obtenerUsuarioPorId);
 
 // POST /api/usuarios -> crear uno
 router.post('/', crearUsuario);
 
 // PUT /api/usuarios/:id -> actualizar uno
-router.put('/:id', actualizarUsuario);
+router.put('/:id', authToken, actualizarUsuario);
 
 // DELETE /api/usuarios/:id -> eliminar uno
-router.delete('/:id', eliminarUsuario);
+router.delete('/:id', [authToken, esAdmin], eliminarUsuario);
 
 export default router;
