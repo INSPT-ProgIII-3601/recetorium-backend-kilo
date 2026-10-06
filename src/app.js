@@ -23,12 +23,15 @@ import express from 'express';
 // bloquearía las llamadas.
 import cors from 'cors';
 
+// Importa mongoose, para conectar con la BD de MongDB
+import mongoose from 'mongoose';
+
 // Importamos el "router" de usuarios. Cada router agrupa las
 // rutas de un recurso. Acá podríamos sumar más routers (recetas,
 // ingredientes, etc.) a medida que crezca la app.
 import usuariosRoutes from './routes/usuarios.routes.js';
-import recetasRoutes from './routes/recetas.routes.js';
-import ingredientesRoutes from './routes/ingredientes.routes.js';
+/* import recetasRoutes from './routes/recetas.routes.js';
+import ingredientesRoutes from './routes/ingredientes.routes.js'; */
 import {loginUsuario} from './controllers/usuario.controller.js'
 
 // Importamos la constante PORT desde nuestro archivo de config.
@@ -64,10 +67,19 @@ app.get('/', (req, res) => {
 // Cada router se monta con un prefijo distinto. Express
 // redirige lo que matchee al router correspondiente.
 app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/recetas', recetasRoutes);
-app.use('/api/ingredientes', ingredientesRoutes);
+/*app.use('/api/recetas', recetasRoutes);
+app.use('/api/ingredientes', ingredientesRoutes);*/
 // login
 app.post('/api/login', loginUsuario);
+
+// Conexión con la BD
+try {
+  const nombreDeLaBD = 'recetorium'; // Cambiar acá por la de cada uno
+  await mongoose.connect(`mongodb://127.0.0.1:27017/${nombreDeLaBD}`);
+  console.log('Base de datos conectada exitosamente');
+} catch (e) {
+  console.error('Error al conectar la BD', e);
+}
 
 // --- Encender el servidor ---
 // app.listen(PORT, callback) pone al servidor a "escuchar"
