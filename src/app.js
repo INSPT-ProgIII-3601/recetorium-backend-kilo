@@ -34,9 +34,12 @@ import usuariosRoutes from './routes/usuarios.routes.js';
 import ingredientesRoutes from './routes/ingredientes.routes.js'; */
 import {loginUsuario} from './controllers/usuario.controller.js'
 
-// Importamos la constante PORT desde nuestro archivo de config.
-// Si existe la variable de entorno PORT la usa, si no, 3000.
-import { PORT } from './config/env.js';
+// dotenv es un paquetito que lee el archivo .env de la raíz
+// del proyecto y carga cada linea en process.env (variables
+// de entorno del proceso de Node). Hay que llamarlo UNA vez
+// al iniciar la app.
+import dotenv from 'dotenv';
+dotenv.config();
 
 // --- Creación de la app ---
 // express() devuelve un objeto "app" que representa al servidor.
@@ -75,7 +78,7 @@ app.post('/api/login', loginUsuario);
 // Conexión con la BD
 try {
   const nombreDeLaBD = 'recetorium'; // Cambiar acá por la de cada uno
-  await mongoose.connect(`mongodb://127.0.0.1:27017/${nombreDeLaBD}`);
+  await mongoose.connect(process.env.MONGODB_URI);
   console.log('Base de datos conectada exitosamente');
 } catch (e) {
   console.error('Error al conectar la BD', e);
@@ -85,6 +88,6 @@ try {
 // app.listen(PORT, callback) pone al servidor a "escuchar"
 // peticiones TCP en el puerto indicado. El callback se
 // ejecuta una vez cuando el servidor está listo.
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
 });

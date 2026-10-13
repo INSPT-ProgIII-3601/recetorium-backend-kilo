@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 export const logInfoCli = (req, resp, next) => {
-    console.log(`IP del cliente: ${req.ip}`);
+        console.log(`IP del cliente: ${req.ip}`);
     console.log(`Fecha/Hora del servidor: ${new Date().toLocaleString()}`);
     next(); // Importante !!
 }
@@ -10,19 +10,17 @@ export const authToken = (req, res, next) => {
     // 1. Obtener el encabezado 'Authorization' (se espera: "Bearer <token>")
     const authHeader = req.headers['authorization'] || req.headers['Authorization'];
     const token = authHeader && authHeader.split(' ')[1];
-
     // 2. Si no viene token, retornar 401
     if (!token) {
-        return res.status(401).json({ mensaje: "no autorizado" });
+        return res.status(401).json({ mensaje: "no autorizado, no llegó token" });
     }
 
     // 3. Verificar si el token es válido
-    // Reemplaza 'TU_CLAVE_SECRETA' por tu variable de entorno (ej: process.env.JWT_SECRET)
-    const SECRET_KEY = process.env.JWT_SECRET || 'claveblablabla';
-
+    const SECRET_KEY = process.env.JWT_SECRET;
+    console.log(token, SECRET_KEY)
     jwt.verify(token, SECRET_KEY, (err, user) => {
         if (err) {
-            return res.status(401).json({ mensaje: "no autorizado" });
+            return res.status(401).json({ mensaje: "no autorizado, token invalido" });
         }
 
         // 4. Token válido: adjuntamos los datos decodificados de la sesión al objeto req

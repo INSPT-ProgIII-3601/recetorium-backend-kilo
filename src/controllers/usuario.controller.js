@@ -150,7 +150,8 @@ export const loginUsuario = async (req, res) => {
       return res.status(401).json({ mensaje: "Credenciales inválidas" });
     }
 
-    const SECRET_KEY = process.env.JWT_SECRET || 'claveblablabla';
+    const SECRET_KEY = process.env.JWT_SECRET;
+    console.log(SECRET_KEY)
 
     const token = jwt.sign(
       { id: usu._id, tipo: usu.tipo },
