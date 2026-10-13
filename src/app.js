@@ -89,5 +89,5 @@ try {
 // peticiones TCP en el puerto indicado. El callback se
 // ejecuta una vez cuando el servidor está listo.
 app.listen(process.env.PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
+  console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
 });
